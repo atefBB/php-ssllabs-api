@@ -141,6 +141,13 @@ class sslLabsApi
 				'http' => array
 				(
 					'ignore_errors' => true
+				),
+				// to abandon the `SSL operation failed with code 1` error 
+				// @see https://stackoverflow.com/a/28701786
+				"ssl"  => array(
+				    "cafile"           => ("path/to/cacert.pem"),
+				    "verify_peer"      => true,
+				    "verify_peer_name" => true,
 				)
 			)
 		);
